@@ -12,8 +12,9 @@ reference: 	https://medium.freecodecamp.org/how-to-scrape-websites-with-python-a
 example site: http://www.midiworld.com/bach.htm
 
 -TODO
-*Parse midi files with an algorithm to figure out the tonality / key of the piece
+Parse midi files with an algorithm to figure out the tonality / key of the piece
 to catalog data sets accordingly.  Training with music in many tonalities produces
 undesirable results
-*algorithim can either inspect file for most recurrent notes to determine key OR
+
+Algorithim can either inspect file for most recurrent notes to determine key OR
 use another webscraper to search the web for metadata (possibly less deterministic)

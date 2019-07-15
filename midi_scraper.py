@@ -10,33 +10,7 @@ import urllib2
 from bs4 import BeautifulSoup
 import os, errno
 
-# quote_page = 'http://www.midiworld.com/bach.htm'
-
-# # query the website and return the html to the variable ‘page’
-# page = urllib2.urlopen(quote_page)
-
-# # parse the html using beautiful soup and store in variable `soup`
-# soup = BeautifulSoup(page, "html.parser")
-
-# # for x in soup.find_all('x', href=True):
-# #     print "Found the URL:", a['href']
-
-# # midi = soup.find_all(href=True)
-# midi = soup.find_all(href=re.compile(".mid$"))
-
-# for a in midi:
-# 	filename = a.get('src')
-# 	data = urllib2.urlopen(filename).read()
-	
-
-
-
-# with open( "myfile.midi", "wb" ) as code:
-# 	code.write(data)
-
-# # print soup.find('a', href = re.compile(r'.*follow\?page.*'))
-
-# ------------------------------------------------------------------
+quote_page = 'http://www.midiworld.com/'
 
 # enter composer name here:
 # composers = ['bach', 'bartok', 'beethoven', 'brahms', 'byrd', 'chopin', 'haydn', 'handel', 'hummel', 'liszt', 'mendelssohn',
@@ -53,7 +27,7 @@ for composer in composers:
 	    if e.errno != errno.EEXIST:
 	        raise
 
-	page = urllib2.urlopen('http://www.midiworld.com/' + composer + '.htm')
+	page = urllib2.urlopen(quote_page + composer + '.htm')
 	soup = BeautifulSoup(page, "html.parser")
 
 	for i, link in enumerate(soup.findAll('a', attrs={'href': re.compile(".mid$")})):
